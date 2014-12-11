@@ -1,0 +1,12 @@
+﻿<eng:DashboardObject x:Class="StandartObjectLibrary.SimpleCylinder"
+                     x:Name="cylinderUserControl"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:std="clr-namespace:StandartObjectLibrary"
+                     xmlns:eng="clr-namespace:DashboardEngine;assembly=DashboardEngine">
+  
+  <std:Cylinder x:Name="cylinder" 
+                Value="{Binding ElementName=cylinderUserControl, Path=Value}"
+                Blinking="{Binding ElementName=cylinderUserControl, Path=Blinking}"
+                BlinkingSpeedRatio="{Binding ElementName=cylinderUserControl, Path=BlinkingSpeedRatio}" />
+</eng:DashboardObject>

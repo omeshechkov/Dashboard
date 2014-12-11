@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="ExtendedObjectsLibrary.GraphicLegendElement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Margin="2" Height="17">
+
+  <Grid x:Name="layoutGrid">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <Border x:Name="colorRectangle" Grid.Column="0" Width="10" Height="10" HorizontalAlignment="Center" Margin="4,0,2,0" VerticalAlignment="Center" />
+    <TextBlock x:Name="textBlock" Grid.Column="1" Foreground="#BBBBBB" Background="Transparent" Margin="1,0,4,0" FontFamily="Tahoma" FontSize="11" VerticalAlignment="Center" />
+  </Grid>
+</UserControl>

@@ -1,0 +1,26 @@
+﻿<eng:DashboardObject x:Class="StandartObjectLibrary.SimpleCooler"
+                     x:Name="coolerUserControl"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:std="clr-namespace:StandartObjectLibrary"
+                     xmlns:eng="clr-namespace:DashboardEngine;assembly=DashboardEngine">
+
+  <DockPanel x:Name="dockPanel">
+    <TextBlock x:Name="titleTextBlock" DockPanel.Dock="Top" HorizontalAlignment="Center"
+               FontFamily="Tahoma" FontSize="11" Foreground="White" Padding="1, 4" />
+
+    <std:Cooler x:Name="cooler"
+                DockPanel.Dock="Top"
+                Color1="#00000000"
+                Width="64" Height="64"
+                Value="{Binding ElementName=coolerUserControl, Path=Value}"
+                StrokeHeight="12"
+                SpeedRatio="{Binding ElementName=coolerUserControl, Path=SpeedRatio}" 
+                Blinking="{Binding ElementName=coolerUserControl, Path=Blinking}" 
+                BlinkingSpeedRatio="{Binding ElementName=coolerUserControl, Path=BlinkingSpeedRatio}" />
+    
+    <TextBlock x:Name="measureUnitTextBlock" DockPanel.Dock="Bottom" HorizontalAlignment="Center"
+               FontFamily="Tahoma" FontSize="11" Foreground="White" Padding="1, 4" />
+
+  </DockPanel>
+</eng:DashboardObject>

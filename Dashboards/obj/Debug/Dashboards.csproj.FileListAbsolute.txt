@@ -1,0 +1,160 @@
+C:\Users\Oleg\Documents\Expression\Expression Blend Projects\Dashboards\Dashboards\bin\Debug\Dashboards.exe
+C:\Users\Oleg\Documents\Expression\Expression Blend Projects\Dashboards\Dashboards\bin\Debug\Dashboards.pdb
+C:\Users\Oleg\Documents\Expression\Expression Blend Projects\Dashboards\Dashboards\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Oleg\Documents\Expression\Expression Blend Projects\Dashboards\Dashboards\obj\Debug\Window1.baml
+C:\Users\Oleg\Documents\Expression\Expression Blend Projects\Dashboards\Dashboards\obj\Debug\App.g.cs
+C:\Users\Oleg\Documents\Expression\Expression Blend Projects\Dashboards\Dashboards\obj\Debug\Dashboards_MarkupCompile.cache
+C:\Users\Oleg\Documents\Expression\Expression Blend Projects\Dashboards\Dashboards\obj\Debug\Dashboards.g.resources
+C:\Users\Oleg\Documents\Expression\Expression Blend Projects\Dashboards\Dashboards\obj\Debug\Dashboards.exe
+C:\Users\Oleg\Documents\Expression\Expression Blend Projects\Dashboards\Dashboards\obj\Debug\Dashboards.pdb
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\bin\Debug\Dashboards.exe
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\bin\Debug\Dashboards.pdb
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\obj\Debug\ResolveAssemblyReference.cache
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\obj\Debug\Window1.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\obj\Debug\App.g.cs
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\obj\Debug\Dashboards_MarkupCompile.cache
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\obj\Debug\Dashboards.g.resources
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\obj\Debug\Dashboards.exe
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\obj\Debug\Dashboards.pdb
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\bin\Debug\Dashboards.exe.manifest
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\bin\Debug\Dashboards.application
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\bin\Debug\DashboardEngine.exe
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\bin\Debug\DashboardEngine.pdb
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\obj\Debug\Dashboards.exe.manifest
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\obj\Debug\Dashboards.application
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\bin\Debug\StandartObjectLibrary.dll
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\Dashboards\bin\Debug\StandartObjectLibrary.pdb
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\Dashboards.exe
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\Dashboards.pdb
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\DashboardEngine.exe
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\ExtendedObjectsLibrary.dll
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\StandartObjectLibrary.dll
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\DashboardEngine.pdb
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\ExtendedObjectsLibrary.pdb
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\StandartObjectLibrary.pdb
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\ResolveAssemblyReference.cache
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\App.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Window1.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\CC\Avaya.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\CC\Remedy.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\CC\Resources\AvayaDictionary.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\Billing.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\BillingConnections.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\BillingModule.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\ChargingMassages.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\MobiPay.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\NewBilling.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\QA\SBP.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\QA\TestAggregateState.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\Resources\EllipseBrushesDictionary.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\TD\BTS.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\TD\CommutatorTrunks.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\TD\Resources\CommutatorDictionary.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\App.g.cs
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Window1.g.cs
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Dashboards_MarkupCompile.cache
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Dashboards.g.resources
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Dashboards.exe
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Dashboards.pdb
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Dashboards.exe
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Dashboards.pdb
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\App.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Window2.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\CC\Avaya.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\CC\Remedy.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\CC\Resources\AvayaDictionary.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\Billing.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\BillingConnections.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\BillingModule.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\ChargingMassages.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\MobiPay.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\NewBilling.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\QA\SBP.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\QA\TestAggregateState.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\Resources\EllipseBrushesDictionary.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\TD\BTS.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\TD\CommutatorTrunks.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\TD\Resources\CommutatorDictionary.baml
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\App.g.cs
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Window2.g.cs
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Dashboards_MarkupCompile.cache
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Dashboards.g.resources
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\Dashboards.exe
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\Dashboards.pdb
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\DashboardEngine.exe
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\ExtendedObjectsLibrary.dll
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\StandartObjectLibrary.dll
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\ExtendedObjectsLibrary.pdb
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\DashboardEngine.pdb
+D:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\StandartObjectLibrary.pdb
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Dashboards.exe
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Dashboards.pdb
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\Dashboards.exe
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\Dashboards.pdb
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\DashboardEngine.exe
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\ExtendedObjectsLibrary.dll
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\StandartObjectLibrary.dll
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\ExtendedObjectsLibrary.pdb
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\DashboardEngine.pdb
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\bin\Debug\StandartObjectLibrary.pdb
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\ResolveAssemblyReference.cache
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\App.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Window2.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\CC\Avaya.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\CC\Remedy.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\CC\Resources\AvayaDictionary.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\Billing.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\BillingConnections.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\BillingModule.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\ChargingMassages.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\MobiPay.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\IT\NewBilling.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\QA\SBP.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\QA\TestAggregateState.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\Resources\EllipseBrushesDictionary.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\TD\BTS.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\TD\CommutatorTrunks.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Xaml\TD\Resources\CommutatorDictionary.baml
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\App.g.cs
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Window2.g.cs
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Dashboards_MarkupCompile.cache
+H:\Projects\.NET\NurTelecom\Dashboard\Dashboards\obj\Debug\Dashboards.g.resources
+D:\projects\Dashboard\Dashboards\obj\Debug\Dashboards.exe
+D:\projects\Dashboard\Dashboards\obj\Debug\Dashboards.pdb
+D:\projects\Dashboard\Dashboards\bin\Debug\Dashboards.exe
+D:\projects\Dashboard\Dashboards\bin\Debug\Dashboards.pdb
+D:\projects\Dashboard\Dashboards\bin\Debug\DashboardEngine.exe
+D:\projects\Dashboard\Dashboards\bin\Debug\ExtendedObjectsLibrary.dll
+D:\projects\Dashboard\Dashboards\bin\Debug\StandartObjectLibrary.dll
+D:\projects\Dashboard\Dashboards\bin\Debug\ExtendedObjectsLibrary.pdb
+D:\projects\Dashboard\Dashboards\bin\Debug\DashboardEngine.pdb
+D:\projects\Dashboard\Dashboards\bin\Debug\StandartObjectLibrary.pdb
+D:\projects\Dashboard\Dashboards\obj\Debug\Dashboards.csprojResolveAssemblyReference.cache
+D:\projects\Dashboard\Dashboards\obj\Debug\App.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Window2.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\CC\Avaya.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\CC\Remedy.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\CC\Resources\AvayaDictionary.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\IT\Billing.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\IT\BillingConnections.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\IT\BillingModule.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\IT\ChargingMassages.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\IT\MobiPay.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\IT\NewBilling.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\QA\SBP.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\QA\TestAggregateState.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\Resources\EllipseBrushesDictionary.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\TD\BTS.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\TD\CommutatorTrunks.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\Xaml\TD\Resources\CommutatorDictionary.baml
+D:\projects\Dashboard\Dashboards\obj\Debug\App.g.cs
+D:\projects\Dashboard\Dashboards\obj\Debug\Window2.g.cs
+D:\projects\Dashboard\Dashboards\obj\Debug\Dashboards_MarkupCompile.cache
+D:\projects\Dashboard\Dashboards\obj\Debug\Dashboards.g.resources
+D:\projects\Dashboard\Dashboards\bin\Debug\Dashboards.exe.manifest
+D:\projects\Dashboard\Dashboards\bin\Debug\Dashboards.application
+D:\projects\Dashboard\Dashboards\obj\Debug\Dashboards.TrustInfo.xml
+D:\projects\Dashboard\Dashboards\obj\Debug\Dashboards.exe.manifest
+D:\projects\Dashboard\Dashboards\obj\Debug\Dashboards.application
+D:\projects\Dashboard\Dashboards\bin\Debug\Dashboards.exe.config

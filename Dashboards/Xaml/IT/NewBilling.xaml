@@ -1,0 +1,738 @@
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:eng="clr-namespace:DashboardEngine;assembly=DashboardEngine"
+      xmlns:std="clr-namespace:StandartObjectLibrary;assembly=StandartObjectLibrary"
+      xmlns:ext="clr-namespace:ExtendedObjectsLibrary;assembly=ExtendedObjectsLibrary">
+
+  <Page.Resources>
+    <XmlDataProvider x:Key="Data" Source="http://172.27.129.37/SchemaProvision/Gate.svc/RunScenario?name=IT/Billing.xml" XPath="/TransformedSchemas"/>
+
+    <Style x:Key="DashboardObjectStyle" TargetType="{x:Type eng:DashboardObject}">
+      <Setter Property="AutoShowToolTip" Value="False" />
+      <Setter Property="AggregateScope" Value="NEW BILLING" />
+    </Style>
+
+    <Style x:Key="coloredTextBlockBaseStyle" TargetType="{x:Type std:ColoredTextBlock}" BasedOn="{StaticResource DashboardObjectStyle}" />
+    <Style x:Key="simpleCoolerBaseStyle" TargetType="{x:Type std:SimpleCooler}" BasedOn="{StaticResource DashboardObjectStyle}" />
+    <Style x:Key="simpleCylinderBaseStyle" TargetType="{x:Type std:SimpleCylinder}" BasedOn="{StaticResource DashboardObjectStyle}" />
+    <Style x:Key="simpleEllipseBaseStyle" TargetType="{x:Type std:SimpleEllipse}" BasedOn="{StaticResource DashboardObjectStyle}" />
+    <Style x:Key="simpleLinkBaseStyle" TargetType="{x:Type std:SimpleLink}" BasedOn="{StaticResource DashboardObjectStyle}" />
+    <Style x:Key="simpleProgressBarBaseStyle" TargetType="{x:Type std:SimpleProgressBar}" BasedOn="{StaticResource DashboardObjectStyle}" />
+
+    <!-- Default BorderStyle -->
+    <Style TargetType="{x:Type Border}">
+      <Setter Property="BorderBrush" Value="#4a546f"/>
+    </Style>
+
+    <!-- Default TextBlockStyle -->
+    <Style TargetType="{x:Type TextBlock}">
+      <Setter Property="FontFamily" Value="Tahoma"/>
+      <Setter Property="FontSize" Value="11"/>
+      <Setter Property="Foreground" Value="Red"/>
+      <Setter Property="Padding" Value="1,2"/>
+    </Style>
+
+    <!-- Default LabelStyle -->
+    <Style TargetType="{x:Type Label}">
+      <Setter Property="FontFamily" Value="Tahoma"/>
+      <Setter Property="FontSize" Value="11"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="Padding" Value="1,2"/>
+    </Style>
+
+    <!-- GroupHeaderStyle -->
+    <Style x:Key="GroupHeaderStyle" TargetType="{x:Type Label}">
+      <Setter Property="FontFamily" Value="Tahoma"/>
+      <Setter Property="FontSize" Value="11.7"/>
+      <Setter Property="FontWeight" Value="Bold"/>
+      <Setter Property="Foreground" Value="#b5c7ff"/>
+      <Setter Property="Margin" Value="1"/>
+      <Setter Property="Padding" Value="2,3"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Label}">
+            <Border BorderBrush="#4a546f"
+                    BorderThickness="0,0,0,1"
+                    Padding="{TemplateBinding Padding}"
+                    Margin="{TemplateBinding Margin}">
+              <ContentPresenter/>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- SimpleCylinder -->
+    <Style TargetType="{x:Type std:SimpleCylinder}" BasedOn="{StaticResource simpleCylinderBaseStyle}">
+      <Setter Property="Width" Value="59"/>
+      <Setter Property="Height" Value="90"/>
+      <Setter Property="Margin" Value="4"/>
+    </Style>
+
+    <!-- SimpleProgressBar -->
+    <Style TargetType="{x:Type std:SimpleProgressBar}" BasedOn="{StaticResource simpleProgressBarBaseStyle}">
+      <Setter Property="Height" Value="15"/>
+    </Style>
+
+    <!-- ProgressBarVertical -->
+    <Style x:Key="ProgressBarVerticalStyle" TargetType="{x:Type std:SimpleProgressBar}">
+      <Setter Property="Height" Value="48"/>
+      <Setter Property="Width" Value="140"/>
+      <Setter Property="Margin" Value="4"/>
+      <Setter Property="LayoutTransform">
+        <Setter.Value>
+          <RotateTransform Angle="-90"/>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- SimpleEllipse -->
+    <Style TargetType="{x:Type std:SimpleEllipse}" BasedOn="{StaticResource simpleEllipseBaseStyle}">
+      <Setter Property="Width" Value="83"/>
+      <Setter Property="Height" Value="27"/>
+      <Setter Property="Margin" Value="4"/>
+    </Style>
+
+
+    <!-- Show All Grid Lines -->
+    <Style TargetType="{x:Type Grid}">
+      <Setter Property="ShowGridLines" Value="False"/>
+    </Style>
+
+  </Page.Resources>
+
+  <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+    <Viewbox SnapsToDevicePixels="True" Margin="10">
+      <Grid Width="1860" Height="920">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="170"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="260"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="154"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Rating Insurance (top section) -->
+        <std:Group Grid.Row="0" Grid.ColumnSpan="2" Title="Rating Insurance">
+          <Grid Margin="4,0,4,4">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="10"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="10"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+
+            <!-- Processing Nodes -->
+            <Label Grid.Row="0" Grid.Column="0"
+                       Style="{StaticResource GroupHeaderStyle}"
+                       Content="Processing Nodes"/>
+            <Grid Grid.Row="1" Grid.Column="0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="70"/>
+              </Grid.ColumnDefinitions>
+
+              <!-- Rating 1 -->
+              <std:SimpleCooler Grid.Column="0" Style="{StaticResource simpleCoolerBaseStyle}"
+                                Label="rating1" Title="rating1" MeasureUnit="CPU Load"
+                                DataSource="{Binding Source={StaticResource Data}, XPath=Cooler_172_27_129_132}"
+                                SpeedRatio="1"/>
+
+              <!-- Rating 2 -->
+              <std:SimpleCooler Grid.Column="1" Style="{StaticResource simpleCoolerBaseStyle}"
+                                Label="rating2" Title="rating2" MeasureUnit="CPU Load"
+                                DataSource="{Binding Source={StaticResource Data}, XPath=Cooler_172_27_129_133}"
+                                SpeedRatio="1"/>
+            </Grid>
+
+
+            <!-- Balancing -->
+            <Label Grid.Column="2" Grid.Row="0" Style="{StaticResource GroupHeaderStyle}" Content="Balancing"/>
+            <Grid Grid.Column="2" Grid.Row="1" Margin="1">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+
+              <!-- Balance 1 -->
+              <DockPanel Grid.Row="0" Grid.Column="0">
+                <Label DockPanel.Dock="Top" Content="UDAG Sessions"/>
+                <std:SimpleProgressBar DockPanel.Dock="Top"
+                                       Title="UDAG Sessions Balance" Description="UDAG Sessions Balance"
+                                       LowerLimit="0" UpperLimit="100"
+                                       DataSource="{Binding Source={StaticResource Data}, XPath=UDAGSessionsBalance}"/>
+                
+                <Grid DockPanel.Dock="Bottom">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+                  
+                  <TextBlock Grid.Column="1"
+                             Padding="1,1,0,1" FontSize="11" FontWeight="Bold" Foreground="White"
+                             Text="{Binding Source={StaticResource Data}, XPath=UDAGSessionsBalance/Counters/Counter[@name\=\'One\']/@Value}"/>
+                  <TextBlock Grid.Column="2"
+                             Padding="0,1,1,1" FontSize="11" FontWeight="Bold" Foreground="White"
+                             Text="%"/>
+                </Grid>
+                
+              </DockPanel>
+
+              <!-- Balance 2 -->
+              <DockPanel Grid.Row="1" Grid.Column="0">
+                <Label DockPanel.Dock="Top" Content="TimesTen Peering"/>
+                <std:SimpleProgressBar DockPanel.Dock="Top" LowerLimit="0" UpperLimit="100"
+                                       Title="TimesTen Peering" Description="Replication balance between rating nodes"
+                                       DataSource="{Binding Source={StaticResource Data}, XPath=TimesTenBalance}"/>
+                <Grid DockPanel.Dock="Bottom">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                  </Grid.ColumnDefinitions>
+
+                  <TextBlock Grid.Column="1"
+                             Padding="1,1,0,1" FontSize="11" FontWeight="Bold" Foreground="White"
+                             Text="{Binding Source={StaticResource Data}, XPath=TimesTenBalance/Counters/Counter[@name\=\'One\']/@Value}"/>
+                  <TextBlock Grid.Column="2"
+                             Padding="0,1,1,1" FontSize="11" FontWeight="Bold" Foreground="White"
+                             Text="%"/>
+                </Grid>
+              </DockPanel>
+
+              
+              <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Margin="10,0,0,0">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Total Sessions -->
+                <TextBlock Grid.Row="0" Text="Total Sessions" Foreground="#b5c7ff" />
+                <Grid Grid.Row="1" Margin="10,0,0,0">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                  </Grid.ColumnDefinitions>
+
+                  <std:ColoredTextBlock Grid.Column="0" VerticalAlignment="Center"
+                                        Style="{StaticResource coloredTextBlockBaseStyle}"
+                                        DataSource="{Binding Source={StaticResource Data}, XPath=UDAGTotalSessionsRating1}" />
+
+                  <TextBlock Grid.Column="1" Text="/" Foreground="White" FontFamily="Tahoma" FontSize="11" VerticalAlignment="Center" />
+
+                  <std:ColoredTextBlock Grid.Column="2" VerticalAlignment="Center"
+                                        Style="{StaticResource coloredTextBlockBaseStyle}"
+                                        DataSource="{Binding Source={StaticResource Data}, XPath=UDAGTotalSessionsRating2}" />
+                </Grid>
+
+                <!-- Average Reply Time -->
+                <TextBlock Grid.Row="2" Text="Average Reply Time" Foreground="#b5c7ff" />
+                <Grid Grid.Row="3" Margin="10,0,0,0">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                  </Grid.ColumnDefinitions>
+                  
+                  <std:ColoredTextBlock Grid.Column="0" VerticalAlignment="Center"
+                                        Style="{StaticResource coloredTextBlockBaseStyle}"
+                                        DataSource="{Binding Source={StaticResource Data}, XPath=TimesTenTransactionsRating1}" />
+
+                  <TextBlock Grid.Column="1" Text="/" Foreground="White" FontFamily="Tahoma" FontSize="11" VerticalAlignment="Center" />
+
+                  <std:ColoredTextBlock Grid.Column="2" VerticalAlignment="Center"
+                                        Style="{StaticResource coloredTextBlockBaseStyle}"
+                                        DataSource="{Binding Source={StaticResource Data}, XPath=TimesTenTransactionsRating2}" />
+                </Grid>
+              </Grid>
+
+            </Grid>
+
+            <!-- Graphic 1 -->
+            <Label Grid.Column="4" Grid.Row="0" Style="{StaticResource GroupHeaderStyle}" Content="Rating Garbage"/>
+            <ext:GraphicControl Grid.Column="4" Grid.Row="1" Width="360"
+                                DataSource="{Binding Source={StaticResource Data}, XPath=GraphicsRatingGarbages/Graphic}"/>
+
+            <!-- Post Processings -->
+            <Label Grid.Row="0" Grid.Column="6"
+                       Style="{StaticResource GroupHeaderStyle}"
+                       Content="Post Processings"/>
+            <Grid Grid.Row="1" Grid.Column="6">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+
+              <std:SimpleCylinder Grid.Column="0"
+                                  Title="Post Processing" Description="Post queue (ready)"
+                                  DataSource="{Binding Source={StaticResource Data}, XPath=PostProcessing/PostReadyQueue[@name\=\'post_queue\']}"/>
+
+              <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Padding="1,8,1,0" Margin="0"
+                           Foreground="White" Text="Processed" />
+                <std:ColoredTextBlock Grid.Row="1" Padding="1,0,1,1" Margin="0"
+                                      Style="{StaticResource coloredTextBlockBaseStyle}"
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=PostProcessing/PostProcessedQueue[@name\=\'post_queue\']}" />
+
+                <TextBlock Grid.Row="2" Padding="1,3,1,0" Margin="0"
+                           Foreground="White" Text="Average" />
+                <std:ColoredTextBlock Grid.Row="3" Padding="1,0,1,1" Margin="0"
+                                      Style="{StaticResource coloredTextBlockBaseStyle}"
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=PostProcessing/PostAverageTimeQueue[@name\=\'post_queue\']}" />
+
+                <TextBlock Grid.Row="4" Padding="1,3,1,0" Margin="0"
+                           Foreground="White" Text="Total" />
+                <std:ColoredTextBlock Grid.Row="5" Padding="1,0,1,1" Margin="0"
+                                      Style="{StaticResource coloredTextBlockBaseStyle}"
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=PostProcessing/PostTotalTimeQueue[@name\=\'post_queue\']}" />
+              </Grid>
+            </Grid>
+
+
+            <!-- Queue 1 -->
+            <std:SimpleLink Grid.Row="1" Grid.Column="7" Margin="6" VerticalAlignment="Center" LinkDirection="Right"
+                                Title="Post Processing" Description="Post queue (ready)" MeasureUnit="msg/sec"
+                                DataSource="{Binding Source={StaticResource Data}, XPath=PostProcessing/PostReadyQueue[@name\=\'post_queue\']}"
+                                GraphicValues="{Binding Source={StaticResource Data}, XPath=PostProcessing/LinkPostReadyQueueGraphicData/Value}"
+                                SpeedRatio="1"/>
+
+
+            <!-- Job 1 -->
+            <Label Grid.Row="0" Grid.Column="8" Style="{StaticResource GroupHeaderStyle}" Content="Rating Jobs"/>
+            <Border Grid.Row="1" Grid.Column="8" BorderThickness="0.5,0,0.5,0" Margin="1,26,1,20" CornerRadius="3" Padding="6,4">
+              <std:SimpleEllipse Title="Rating Jobs" Description="posting.post_processing_job;" PrefixLabel="JOB"
+                                 DataSource="{Binding Source={StaticResource Data}, XPath=RatingJobs}"/>
+            </Border>
+
+
+            <!-- Queue 2 -->
+            <std:SimpleLink LinkDirection="Right" Grid.Row="1" Grid.Column="9" Margin="6" VerticalAlignment="Center"
+                            Title="Charge Signalling" Description="Charge signalling queue (ready)" MeasureUnit="msg/sec"
+                            DataSource="{Binding Source={StaticResource Data}, XPath=PostProcessing/ChargeSignallingReadyQueue[@name\=\'charge_signalling_queue\']}"
+                            GraphicValues="{Binding Source={StaticResource Data}, XPath=PostProcessing/LinkChargeSignallingQueueGraphicData/Value}"
+                            SpeedRatio="1" />
+
+
+
+            <!-- Bank A -->
+            <Label Grid.Row="0" Grid.Column="10" Style="{StaticResource GroupHeaderStyle}" Content="Charge Signalling Queue"/>
+            <Grid Grid.Row="1" Grid.Column="10">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+
+              <std:SimpleCylinder Grid.Column="0"
+                                  Title="Charge Signalling" Description="Charge signalling queue (ready)"
+                                  DataSource="{Binding Source={StaticResource Data}, XPath=PostProcessing/ChargeSignallingReadyQueue[@name\=\'charge_signalling_queue\']}" />
+
+              <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Padding="1,8,1,0" Margin="0"
+                           Foreground="White" Text="Processed" />
+                <std:ColoredTextBlock Grid.Row="1" Padding="1,0,1,1" Margin="0"
+                                      Style="{StaticResource coloredTextBlockBaseStyle}"
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=PostProcessing/ChargeSignallingProcessedQueue[@name\=\'charge_signalling_queue\']}" />
+
+                <TextBlock Grid.Row="2" Padding="1,3,1,0" Margin="0"
+                           Foreground="White" Text="Average" />
+                <std:ColoredTextBlock Grid.Row="3" Padding="1,0,1,1" Margin="0"
+                                      Style="{StaticResource coloredTextBlockBaseStyle}"
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=PostProcessing/ChargeSignallingAverageTimeQueue[@name\=\'charge_signalling_queue\']}" />
+
+                <TextBlock Grid.Row="4" Padding="1,3,1,0" Margin="0"
+                           Foreground="White" Text="Total" />
+                <std:ColoredTextBlock Grid.Row="5" Padding="1,0,1,1" Margin="0"
+                                      Style="{StaticResource coloredTextBlockBaseStyle}"
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=PostProcessing/ChargeSignallingTotalTimeQueue[@name\=\'charge_signalling_queue\']}" />
+              </Grid>
+            </Grid>
+
+          </Grid>
+        </std:Group>
+
+        
+        <!-- Vertical Links 1 -->
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="547"/>
+            <ColumnDefinition Width="38"/>
+            <ColumnDefinition Width="38"/>
+            <ColumnDefinition Width="598"/>
+            <ColumnDefinition Width="38"/>
+            <ColumnDefinition Width="38"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+
+          <std:SimpleLink Grid.Column="1" LinkDirection="Up"
+                          Title="Request Per Second" Description="Rating from UDAG" MeasureUnit="request/sec"
+                          DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_21/LinkRequestPerTime[@name\=\'rating\']}"
+                          GraphicValues="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_21/LinkGraphicData[@name\=\'Request\ Per\ Time\' and @description\=\'UDAG\ Id:1\ Connection:\ rating\']/Value}" 
+                          SpeedRatio="1"/>
+
+          <std:SimpleLink Grid.Column="2" LinkDirection="Down"
+                          Title="Reply Per Second" Description="Rating to UDAG" MeasureUnit="reply/sec"
+                          DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_21/LinkReplyPerTime[@name\=\'rating\']}"
+                          GraphicValues="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_21/LinkGraphicData[@name\=\'Reply\ Per\ Time\' and @description\=\'UDAG\ Id:1\ Connection:\ rating\']/Value}"
+                          SpeedRatio="1"/>
+
+          <std:SimpleLink Grid.Column="4" LinkDirection="Up"
+                          Title="Request Per Second" Description="Rating from UDAG" MeasureUnit="request/sec"
+                          DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_22/LinkRequestPerTime[@name\=\'rating\']}"
+                          GraphicValues="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_22/LinkGraphicData[@name\=\'Request\ Per\ Time\' and @description\=\'UDAG\ Id:1\ Connection:\ rating\']/Value}"
+                          SpeedRatio="1"/>
+          <std:SimpleLink Grid.Column="5" LinkDirection="Down"
+                          Title="Reply Per Second" Description="Rating to UDAG" MeasureUnit="reply/sec"
+                          DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_22/LinkReplyPerTime[@name\=\'rating\']}"
+                          GraphicValues="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_22/LinkGraphicData[@name\=\'Reply\ Per\ Time\' and @description\=\'UDAG\ Id:1\ Connection:\ rating\']/Value}"
+                          SpeedRatio="1"/>
+        </Grid>
+
+        
+        <!-- Signalling Nodes -->
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          
+          <!-- Signalling *.21 -->
+          <std:Group Grid.Column="1" Title="signalling21">
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+
+              <Grid Grid.Column="1" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <std:SimpleProgressBar Grid.Column="0" Grid.Row="0" Grid.RowSpan="4" UpperLimit="100"
+                                       Style="{StaticResource ProgressBarVerticalStyle}"
+                                       Title="Rating Queue" Description="Rating Queue"
+                                       DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_21/ProgressBarQueue[@name\=\'rating\']}"/>
+                
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Padding="1,3,1,0" Margin="0"
+                           Foreground="White" Text="Value" />
+                
+                <std:ColoredTextBlock Grid.Column="1" Grid.Row="1"
+                                      Padding="1,0,1,1" Margin="0"
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_21/ProgressBarQueue[@name\=\'rating\']}"/>
+                
+              </Grid>
+
+              <Grid Grid.Column="3" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <std:SimpleProgressBar Grid.Column="0" Grid.Row="0" Grid.RowSpan="4" UpperLimit="100"
+                                       Style="{StaticResource ProgressBarVerticalStyle}"
+                                       Title="Charging Queue" Description="Charging Queue"
+                                       DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_21/ProgressBarQueue[@name\=\'charging\']}"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Padding="1,3,1,0" Margin="0"
+                           Foreground="White" Text="Value" />
+
+                <std:ColoredTextBlock Grid.Column="1" Grid.Row="1"
+                                      Padding="1,0,1,1" Margin="0"
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_21/ProgressBarQueue[@name\=\'charging\']}"/>
+
+              </Grid>
+              
+            </Grid>
+          </std:Group>
+
+          <!-- Signalling *.22 -->
+          <std:Group Grid.Column="3" Title="signalling22">
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+
+              <Grid Grid.Column="1" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <std:SimpleProgressBar Grid.Column="0" Grid.Row="0" Grid.RowSpan="4"
+                                       Style="{StaticResource ProgressBarVerticalStyle}"
+                                       Title="Rating Queue" Description="Rating Queue"
+                                       DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_22/ProgressBarQueue[@name\=\'rating\']}"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Padding="1,3,1,0" Margin="0"
+                           Foreground="White" Text="Value" />
+
+                <std:ColoredTextBlock Grid.Column="1" Grid.Row="1"
+                                      Padding="1,0,1,1" Margin="0"
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_22/ProgressBarQueue[@name\=\'rating\']}"/>
+
+              </Grid>
+
+              <Grid Grid.Column="3" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <std:SimpleProgressBar Grid.Column="0" Grid.Row="0" Grid.RowSpan="4"
+                                       Style="{StaticResource ProgressBarVerticalStyle}"
+                                       Title="Charging Queue" Description="Charging Queue"
+                                       DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_22/ProgressBarQueue[@name\=\'charging\']}"/>
+
+                <TextBlock Grid.Column="1" Grid.Row="0"
+                           Padding="1,3,1,0" Margin="0"
+                           Foreground="White" Text="Value" />
+
+                <std:ColoredTextBlock Grid.Column="1" Grid.Row="1"
+                                      Padding="1,0,1,1" Margin="0"
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_22/ProgressBarQueue[@name\=\'charging\']}"/>
+
+              </Grid>
+
+            </Grid>
+          </std:Group>
+
+        </Grid>
+
+        
+        <!-- Vertical Links 2 -->
+        <Grid Grid.Row="3" Grid.ColumnSpan="2">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="547"/>
+            <ColumnDefinition Width="38"/>
+            <ColumnDefinition Width="38"/>
+            <ColumnDefinition Width="598"/>
+            <ColumnDefinition Width="38"/>
+            <ColumnDefinition Width="38"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+
+          <std:SimpleLink Grid.Column="1" LinkDirection="Up"
+                          Title="Reply Per Second" Description="Charging to UDAG" MeasureUnit="reply/sec"
+                          DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_21/LinkReplyPerTime[@name\=\'charging\']}"
+                          GraphicValues="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_21/LinkGraphicData[@name\=\'Reply\ Per\ Time\' and @description\=\'UDAG\ Id:1\ Connection:\ charging\']/Value}"
+                          SpeedRatio="1" />
+
+          <std:SimpleLink Grid.Column="2" LinkDirection="Down"
+                          Title="Request Per Second" Description="Charging from UDAG" MeasureUnit="request/sec"
+                          DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_21/LinkRequestPerTime[@name\=\'charging\']}"
+                          GraphicValues="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_21/LinkGraphicData[@name\=\'Request\ Per\ Time\' and @description\=\'UDAG\ Id:1\ Connection:\ charging\']/Value}"
+                          SpeedRatio="1" />
+
+          <std:SimpleLink Grid.Column="4" LinkDirection="Up"
+                          Title="Reply Per Second" Description="Charging to UDAG" MeasureUnit="reply/sec"
+                          DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_22/LinkReplyPerTime[@name\=\'charging\']}"
+                          GraphicValues="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_22/LinkGraphicData[@name\=\'Reply\ Per\ Time\' and @description\=\'UDAG\ Id:1\ Connection:\ charging\']/Value}"
+                          SpeedRatio="1" />
+          
+          <std:SimpleLink Grid.Column="5" LinkDirection="Down"
+                          Title="Request Per Second" Description="Charging from UDAG" MeasureUnit="request/sec"
+                          DataSource="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_22/LinkRequestPerTime[@name\=\'charging\']}"
+                          GraphicValues="{Binding Source={StaticResource Data}, XPath=UDAGs/UDAG_172_27_141_22/LinkGraphicData[@name\=\'Request\ Per\ Time\' and @description\=\'UDAG\ Id:1\ Connection:\ charging\']/Value}"
+                          SpeedRatio="1" />
+        </Grid>
+
+        
+        <!-- Charge Processings & Billings -->
+        <std:Group Grid.Row="4" Grid.ColumnSpan="2" Title="Charge Processings &amp; Billings">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="10"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="10"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="10"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="10"/>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="150"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Rating 3 -->
+            <Label Grid.Row="0" Grid.Column="0"
+                   Style="{StaticResource GroupHeaderStyle}"
+                   Content="Processing Node"/>
+            <Grid Grid.Row="1" Grid.Column="0">
+              <std:SimpleCooler Style="{StaticResource simpleCoolerBaseStyle}"
+                                Label="charging" Title="charging" MeasureUnit="CPU Load"
+                                DataSource="{Binding Source={StaticResource Data}, XPath=Cooler_172_27_129_151}"
+                                SpeedRatio="1"/>
+            </Grid>
+            
+            <!-- Graphic 2 -->
+            <Label Grid.Column="2" Grid.Row="0" Style="{StaticResource GroupHeaderStyle}" Content="Network Events"/>
+            <ext:GraphicControl Grid.Column="2" Grid.Row="1" Width="360"
+                                DataSource="{Binding Source={StaticResource Data}, XPath=GraphicsStrokes/Graphic[@name\=\'Total\ Strokes\']}"/>
+            
+            <!-- Graphic 3 -->
+            <Label Grid.Column="6" Grid.Row="0" Style="{StaticResource GroupHeaderStyle}" Content="Charging Garbage"/>
+            <ext:GraphicControl Grid.Column="6" Grid.Row="1" Width="360"/>
+
+            <!-- Job 2 -->
+            <Label Grid.Row="0" Grid.Column="8" Style="{StaticResource GroupHeaderStyle}" Content="Charging Jobs"/>
+            <Border Grid.Row="1" Grid.Column="8" BorderThickness="0.5,0,0.5,0" Margin="1,26,1,20" CornerRadius="3" Padding="6,4">
+              <std:SimpleEllipse Title="Charging Jobs" Description="charging.charging_job;" PrefixLabel="JOB"
+                                     DataSource="{Binding Source={StaticResource Data}, XPath=ChargingJobs}"/>
+            </Border>
+
+
+            <!-- Queue 3 -->
+            <std:SimpleLink Grid.Row="1" Grid.Column="9" Margin="1" VerticalAlignment="Center" LinkDirection="Left"
+                            Title="Charge Processing Queue" Description="Charge processing queue (ready)" MeasureUnit="msg/sec"
+                            DataSource="{Binding Source={StaticResource Data}, XPath=ChargeProcessing/ChargeProcessingReadyQueue[@name\=\'charge_processing_queue\']}"
+                            GraphicValues="{Binding Source={StaticResource Data}, XPath=ChargeProcessing/LinkChargeProcessingQueueGraphicData/Value}"
+                            SpeedRatio="1"/>
+
+            <!-- Bank B -->
+            <Label Grid.Row="0" Grid.Column="10"
+                   Style="{StaticResource GroupHeaderStyle}"
+                   Content="Charge Processing Queue"/>
+            <Grid Grid.Row="1" Grid.Column="10">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+
+              <std:SimpleCylinder Grid.Column="0"
+                                  Title="Charge Processing Queue" Description="Charge processing queue (ready)"
+                                  DataSource="{Binding Source={StaticResource Data}, XPath=ChargeProcessing/ChargeProcessingReadyQueue[@name\=\'charge_processing_queue\']}" />
+
+              <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                  <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Row="0" Padding="1,8,1,0" Margin="0"
+                           Foreground="White" Text="Processed" />
+                <std:ColoredTextBlock Grid.Row="1" Padding="1,0,1,1" Margin="0"
+                                      Style="{StaticResource coloredTextBlockBaseStyle}" 
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=ChargeProcessing/ChargeProcessingProcessedQueue[@name\=\'charge_processing_queue\']}" />
+
+                <TextBlock Grid.Row="2" Padding="1,3,1,0" Margin="0"
+                           Foreground="White" Text="Average" />
+                <std:ColoredTextBlock Grid.Row="3" Padding="1,0,1,1" Margin="0"
+                                      Style="{StaticResource coloredTextBlockBaseStyle}" 
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=ChargeProcessing/ChargeProcessingAverageTimeQueue[@name\=\'charge_processing_queue\']}" />
+
+                <TextBlock Grid.Row="4" Padding="1,3,1,0" Margin="0"
+                           Foreground="White" Text="Total" />
+                <std:ColoredTextBlock Grid.Row="5" Padding="1,0,1,1" Margin="0"
+                                      Style="{StaticResource coloredTextBlockBaseStyle}" 
+                                      DataSource="{Binding Source={StaticResource Data}, XPath=ChargeProcessing/ChargeProcessingTotalTimeQueue[@name\=\'charge_processing_queue\']}" />
+              </Grid>
+            </Grid>
+
+          </Grid>
+        </std:Group>
+
+        
+        <!-- Right Side Link -->
+        <std:SimpleLink Grid.Column="1" Grid.Row="1" Grid.RowSpan="3"
+                        HorizontalAlignment="Left" LinkDirection="Down"
+                        Title="Propagation Speed" Description="Queue propagation speed"
+                        DataSource="{Binding Source={StaticResource Data}, XPath=QueuePropagationStatistics}"
+                        GraphicValues="{Binding Source={StaticResource Data}, XPath=LinkAverageNumberQueuePropagationGraphicData/Value}"
+                        SpeedRatio="1"/>
+
+      </Grid>
+    </Viewbox>
+  </ScrollViewer>
+</Page>

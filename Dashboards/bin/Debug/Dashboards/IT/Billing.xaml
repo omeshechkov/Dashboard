@@ -1,0 +1,159 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:std="clr-namespace:StandartObjectLibrary;assembly=StandartObjectLibrary"
+	    x:Name="Window"
+	    Title="Window1" >
+
+    <Page.Resources>
+        <XmlDataProvider x:Key="data" Source="http://172.27.129.37/SCOMSchema/Service.svc/GetSchema?name=Rating%201%20Garbage%20Statistics" XPath="/RatingData/RawData/GarbageStatistics" />
+        <XmlDataProvider x:Key="charging" Source="http://172.27.129.37/SCOMSchema/Service.svc/GetSchema?name=Rating%201%20Charging%20Statistics" XPath="/RatingData/RawData/ChargingStatistics" />
+
+
+        <Style TargetType="{x:Type ListBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBox}">
+
+
+                        <StackPanel IsItemsHost="True"
+                            Orientation="Vertical"
+                            HorizontalAlignment="Left" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type ListBoxItem}">
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <TextBlock Foreground="White" Text="{Binding XPath=.}" FontSize="9"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontWeight" Value="Normal" />
+        </Style>
+
+    </Page.Resources>
+    <Viewbox Stretch="Uniform"  >
+        <Grid Width="1510" Height="800">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Canvas x:Name="LayoutRoot" Margin="-8,-8,8,8">
+                <std:Group Width="533.793" Height="209.362" HeaderContent="  Bad Calls (Top 5)" Canvas.Left="11.897" Canvas.Top="12.138">
+                    <Canvas Width="530.793" Height="170.568">
+                        <TextBlock Text="ID:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Canvas.Left="4.483" Canvas.Top="-2.5"/>
+                        <TextBlock Text="Name:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="-2.5"/>
+                        <TextBlock Text="Count:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="454.78" Canvas.Top="-2.5"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'1\'\ and\ @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="27.703"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'2\'\ and\ @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="51.303"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'3\'\ and\ @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="74.903"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'4\'\ and\ @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="98.503"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'5\'\ and\ @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="122.103"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'1\'\ and\ @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="27.703"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'2\'\ and\ @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="51.303"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'3\'\ and\ @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="74.903"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'4\'\ and\ @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="98.503"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'5\'\ and\ @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="122.103"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'1\'\ and\ @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="27.703"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'2\'\ and\ @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="51.303"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'3\'\ and\ @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="74.903"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'4\'\ and\ @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="98.503"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[position()\=\'5\'\ and\ @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="122.103"/>
+                        <Path Fill="#FF6495ED" Stretch="Fill" Stroke="#FF060A64" Width="529.313" Height="2" Data="M0.33333333,165 C90.777778,165 181.22222,165 271.66667,165" StrokeThickness="2" Canvas.Top="142.987"/>
+                        <TextBlock Text="Total:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="400" Canvas.Top="140.723"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadCalls/ErrorsCount[@id\=\'9999\']}" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="468.313" Canvas.Top="140.723"/>
+                    </Canvas>
+                </std:Group>
+                <std:Group Width="533.793" Height="209.362" HeaderContent="  Bad SMS (Top 5)" Canvas.Left="11.897" Canvas.Top="234.5">
+                    <Canvas Width="530.793" Height="170.568">
+                        <TextBlock Text="ID:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Canvas.Left="4.483" Canvas.Top="-2.5"/>
+                        <TextBlock Text="Name:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="-2.5"/>
+                        <TextBlock Text="Count:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="454.78" Canvas.Top="-2.5"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'1\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="27.703"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'2\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="51.303"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'3\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="74.903"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'4\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="98.503"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'5\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="122.103"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'1\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="27.703"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'2\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="51.303"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'3\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="74.903"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'4\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="98.503"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'5\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="122.103"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'1\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="27.703"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'2\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="51.303"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'3\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="74.903"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'4\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="98.503"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[position()\=\'5\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="122.103"/>
+                        <Path Fill="#FF6495ED" Stretch="Fill" Stroke="#FF060A64" Width="529.313" Height="2" Data="M0.33333333,165 C90.777778,165 181.22222,165 271.66667,165" StrokeThickness="2" Canvas.Top="142.987"/>
+                        <TextBlock Text="Total:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="400" Canvas.Top="140.723"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadSMS/ErrorsCount[@id\=\'9999\']}" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="468.313" Canvas.Top="140.723"/>
+                    </Canvas>
+                </std:Group>
+                <std:Group Width="533.793" Height="209.362" HeaderContent="  Bad Session GPRS (Top 5)" Canvas.Left="11.897" Canvas.Top="455.862">
+                    <Canvas Width="530.793" Height="170.568">
+                        <TextBlock Text="ID:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Canvas.Left="4.483" Canvas.Top="-2.5"/>
+                        <TextBlock Text="Name:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="-2.5"/>
+                        <TextBlock Text="Count:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="454.78" Canvas.Top="-2.5"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'1\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="27.703"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'2\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="51.303"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'3\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="74.903"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'4\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="98.503"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'5\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="122.103"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'1\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="27.703"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'2\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="51.303"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'3\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="74.903"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'4\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="98.503"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'5\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="122.103"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'1\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="27.703"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'2\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="51.303"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'3\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="74.903"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'4\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="98.503"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[position()\=\'5\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="122.103"/>
+                        <Path Fill="#FF6495ED" Stretch="Fill" Stroke="#FF060A64" Width="529.313" Height="2" Data="M0.33333333,165 C90.777778,165 181.22222,165 271.66667,165" StrokeThickness="2" Canvas.Top="142.987"/>
+                        <TextBlock Text="Total:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="400" Canvas.Top="140.723"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadGPRS/ErrorsCount[@id\=\'9999\']}" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="468.313" Canvas.Top="140.723"/>
+                    </Canvas>
+                </std:Group>
+                <std:Group Width="533.793" Height="209.362" HeaderContent="  Bad Assembling (Top 5)" Canvas.Left="556.357" Canvas.Top="12.138">
+                    <Canvas Width="530.793" Height="170.568">
+                        <TextBlock Text="ID:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Canvas.Left="4.483" Canvas.Top="-2.5"/>
+                        <TextBlock Text="Name:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="-2.5"/>
+                        <TextBlock Text="Count:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="454.78" Canvas.Top="-2.5"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'1\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="27.703"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'2\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="51.303"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'3\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="74.903"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'4\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="98.503"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'5\' and @zero\=\'False\']/@id}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="122.103"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'1\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="27.703"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'2\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="51.303"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'3\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="74.903"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'4\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="98.503"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'5\' and @zero\=\'False\']/@description}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="41.493" Canvas.Top="122.103"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'1\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="27.703"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'2\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="51.303"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'3\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="74.903"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'4\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="98.503"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[position()\=\'5\' and @zero\=\'False\']}" FontSize="14" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="465.78" Canvas.Top="122.103"/>
+                        <Path Fill="#FF6495ED" Stretch="Fill" Stroke="#FF060A64" Width="529.313" Height="2" Data="M0.33333333,165 C90.777778,165 181.22222,165 271.66667,165" StrokeThickness="2" Canvas.Top="142.987"/>
+                        <TextBlock Text="Total:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="400" Canvas.Top="140.723"/>
+                        <TextBlock Text="{Binding Source={StaticResource data}, XPath=Period[@offset\=\'Last\ 30\ minutes\']/BadAssembling/ErrorsCount[@id\=\'9999\']}" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="468.313" Canvas.Top="140.723"/>
+                    </Canvas>
+                </std:Group>
+                <std:Group Width="533.793" Height="84.862" HeaderContent="  Charge (Last 30 min)" Canvas.Left="11.897" Canvas.Top="682.362">
+                    <Canvas Width="530.793" Height="46.068">
+                        <TextBlock Text="Total:" Foreground="#FF06FF00" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="8" Canvas.Top="8"/>
+                        <TextBlock Text="{Binding Source={StaticResource charging}, XPath=Period[@offset\=\'30\ minutes\ ago\']/ChargesCount}" FontSize="24" FontWeight="Bold" Width="Auto" TextAlignment="Center" Canvas.Left="76.313" Canvas.Top="8"/>
+                    </Canvas>
+                </std:Group>
+            </Canvas>
+        </Grid>
+    </Viewbox>
+</Page>

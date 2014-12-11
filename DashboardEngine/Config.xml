@@ -1,0 +1,15 @@
+﻿<Config>
+  <Assemblies>
+    <Assembly url="/Assemblies/StandartObjectLibrary.dll" />
+  </Assemblies>
+
+  <Dashboard>
+    <Directions>
+      <Direction name="IT" image="pack://siteoforigin:,,,/Dashboards/Resources/Pictures/it.jpg">
+        <Dashboards>
+          <Dashboard name="Providing" xamlFile="pack://siteoforigin:,,,/Dashboards/IT/Providing.xaml" refreshInterval="5"/>
+        </Dashboards>
+      </Direction>
+    </Directions>
+  </Dashboard>
+</Config>

@@ -1,0 +1,197 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:std="clr-namespace:StandartObjectLibrary;assembly=StandartObjectLibrary"
+	  x:Name="Window"
+	  Title="Window1"
+      Width="1024"
+      Height="768">
+
+    <Page.Resources>
+        <XmlDataProvider x:Key="data" Source="http://10.0.2.2:888/DashboardDataProvisioning/Gate/RunScenario?path=IT/providing.xml" XPath="/Dashboard"/>
+    </Page.Resources>
+
+    <Grid DataContext="{Binding Source={StaticResource data}}" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="33*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <std:Group Grid.Column="0" Grid.Row="0" Title="Score24 Planner" Margin="10" DataContext="{Binding Source={StaticResource data}, XPath=Planner/Score24}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="25*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Pending: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding XPath=Pending}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Processing: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding XPath=Processing}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+                
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Ready: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding XPath=Ready}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+                
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Error: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding XPath=Error}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+            </Grid>
+        </std:Group>
+
+        <std:Group Grid.Column="2" Grid.Row="0" Title="OddService Planner" Margin="10" DataContext="{Binding Source={StaticResource data}, XPath=Planner/OddService}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="25*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Pending: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding XPath=Pending}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Processing: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding XPath=Processing}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Ready: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding XPath=Ready}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Error: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding XPath=Error}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+            </Grid>
+        </std:Group>
+
+        <std:Group Grid.Column="4" Grid.Row="0" Title="BetRadar Planner" Margin="10" DataContext="{Binding Source={StaticResource data}, XPath=Planner/BetRadar}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="25*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Pending: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding XPath=Pending}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Processing: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding XPath=Processing}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Ready: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding XPath=Ready}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Error: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding XPath=Error}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+            </Grid>
+        </std:Group>
+
+        <std:Group Grid.Column="0" Grid.Row="2" Title="Score24 Processor" Margin="10" DataContext="{Binding Source={StaticResource data}, XPath=Processor/Score24}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="25*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Pending: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding XPath=Pending}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Processing: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding XPath=Processing}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Ready: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding XPath=Ready}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Error: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding XPath=Error}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+            </Grid>
+        </std:Group>
+
+        <std:Group Grid.Column="2" Grid.Row="2" Title="OddService Processor" Margin="10" DataContext="{Binding Source={StaticResource data}, XPath=Processor/OddService}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="25*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Pending: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding XPath=Pending}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Processing: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding XPath=Processing}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Ready: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding XPath=Ready}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Error: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding XPath=Error}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+            </Grid>
+        </std:Group>
+
+        <std:Group Grid.Column="4" Grid.Row="2" Title="BetRadar Processor" Margin="10" DataContext="{Binding Source={StaticResource data}, XPath=Processor/BetRadar}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*"/>
+                    <RowDefinition Height="25*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Pending: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding XPath=Pending}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Processing: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding XPath=Processing}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Ready: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding XPath=Ready}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Error: " Foreground="#FF06FF00" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding XPath=Error}" FontSize="16" FontWeight="Bold" Foreground="#FF06FF00" VerticalAlignment="Center"/>
+            </Grid>
+        </std:Group>
+    </Grid>
+</Page>

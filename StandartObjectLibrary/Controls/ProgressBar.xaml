@@ -1,0 +1,40 @@
+﻿<UserControl x:Name="progressBarUserControl"
+             x:Class="StandartObjectLibrary.ProgressBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Border x:Name="border" Background="#4a546f">
+    <Grid>
+      <DockPanel Height="{Binding ElementName=progressBarUserControl, Path=ActualHeight}">
+        <Rectangle Fill="#2c3242" Width="1" DockPanel.Dock="Left" />
+        <Rectangle Fill="#2c3242" Height="1" DockPanel.Dock="Top" />
+        <Rectangle Fill="#6f7ea6" Width="1" DockPanel.Dock="Right" />
+        <Rectangle Fill="#6f7ea6" Height="1" DockPanel.Dock="Bottom" />
+        <Rectangle Fill="Transparent" Stroke="Transparent" />
+        <DockPanel.Background>
+          <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+            <GradientStop Offset="0" Color="Transparent" />
+            <GradientStop Offset="0.14" Color="#30ffffff" />
+            <GradientStop Offset="0.18" Color="#50ffffff" />
+            <GradientStop Offset="0.23" Color="#49ffffff" />
+            <GradientStop Offset="0.6" Color="Transparent" />
+          </LinearGradientBrush>
+        </DockPanel.Background>
+      </DockPanel>
+      
+      <Border x:Name="rect">
+        <Rectangle>
+          <Rectangle.Fill>
+            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+              <GradientStop Color="#99000000" Offset="0"/>
+              <GradientStop Color="#66000000" Offset="0.1"/>
+              <GradientStop Color="#4F999999" Offset="0.22"/>
+              <GradientStop Color="#60000000" Offset="0.6"/>
+              <GradientStop Color="#99000000" Offset="1"/>
+            </LinearGradientBrush>
+          </Rectangle.Fill>
+        </Rectangle>
+      </Border>
+    </Grid>
+  </Border>
+</UserControl>

@@ -1,0 +1,142 @@
+﻿<UserControl x:Class="ExtendedObjectsLibrary.GraphicControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <UserControl.Resources>
+    <MenuScrollingVisibilityConverter x:Key="MenuScrollingVisibilityConverter" />
+    <Geometry x:Key="DownArrow">M 0,0 L 4,4 L 8,0 Z</Geometry>
+    <Geometry x:Key="UpArrow">M 0,4 L 4,0 L 8,4 Z</Geometry>
+
+    <!-- MenuScrollButton -->
+    <Style x:Key="MenuScrollButton" TargetType="{x:Type RepeatButton}">
+      <Setter Property="ClickMode" Value="Hover" />
+      <Setter Property="MinWidth" Value="0" />
+      <Setter Property="MinHeight" Value="0" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type RepeatButton}">
+            <Border x:Name="border" Background="Transparent" SnapsToDevicePixels="true">
+              <ContentPresenter x:Name="ContentContainer"
+                                Margin="2" 
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+            </Border>
+
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="border" Property="Background" Value="SteelBlue"/>
+                <Setter TargetName="ContentContainer" Property="Margin" Value="3,3,1,1"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- ScrollViewer -->
+    <Style TargetType="{x:Type ScrollViewer}">
+      <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"/>
+      <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ScrollViewer}">
+            <Grid SnapsToDevicePixels="True">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+
+              <Border Grid.Row="1">
+                <ScrollContentPresenter Margin="{TemplateBinding Padding}"/>
+              </Border>
+
+              <RepeatButton Style="{StaticResource MenuScrollButton}"
+                            Grid.Row="0"
+                            Command="{x:Static ScrollBar.LineUpCommand}"
+                            CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                            Focusable="False">
+
+                <RepeatButton.Visibility>
+                  <MultiBinding FallbackValue="Visibility.Collapsed" 
+                                Converter="{StaticResource MenuScrollingVisibilityConverter}"
+                                ConverterParameter="0">
+                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ComputedVerticalScrollBarVisibility" />
+                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="VerticalOffset" />
+                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ExtentHeight" />
+                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ViewportHeight" />
+                  </MultiBinding>
+                </RepeatButton.Visibility>
+
+                <Path Fill="LightSteelBlue" Data="{StaticResource UpArrow}"/>
+              </RepeatButton>
+
+              <RepeatButton Style="{StaticResource MenuScrollButton}"
+                            Grid.Row="2"
+                            Command="{x:Static ScrollBar.LineDownCommand}"
+                            CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                            Focusable="False">
+
+                <RepeatButton.Visibility>
+                  <MultiBinding FallbackValue="Visibility.Collapsed" 
+                                Converter="{StaticResource MenuScrollingVisibilityConverter}"
+                                ConverterParameter="100">
+                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ComputedVerticalScrollBarVisibility"/>
+                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="VerticalOffset"/>
+                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ExtentHeight"/>
+                    <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ViewportHeight"/>
+                  </MultiBinding>
+                </RepeatButton.Visibility>
+
+                <Path Fill="LightSteelBlue"  Data="{StaticResource DownArrow}"/>
+              </RepeatButton>
+            </Grid>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+  </UserControl.Resources>
+
+  <Grid x:Name="layoutGrid">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+
+    <Border x:Name="imagesBorder" Margin="3,3,1,3">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition x:Name="row0" Height="*" />
+          <RowDefinition x:Name="row1" Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition x:Name="column0" Width="Auto" />
+          <ColumnDefinition x:Name="column1" Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="yAxisImage" Grid.Row="0" Grid.Column="0" Margin="0,2,0,1" Stretch="None" />
+
+        <Border x:Name="imageBorder" Grid.Row="0" Grid.Column="1" BorderThickness="1" BorderBrush="#a3d1d8" Margin="0,1,7,0" Background="#60000000">
+          <Image x:Name="image" Stretch="None" />
+        </Border>
+
+        <Image x:Name="xAxisTextImage" Grid.Row="1" Grid.Column="1" Margin="0,0,7,0" Stretch="None" />
+      </Grid>
+    </Border>
+
+    <Border x:Name="legendBorder" BorderBrush="#7b7b83" Background="#60000000" BorderThickness="1" CornerRadius="3" Margin="2,4,4,4">
+      <ScrollViewer>
+        <StackPanel x:Name="legendPanel" HorizontalAlignment="Stretch" />
+      </ScrollViewer>
+    </Border>
+    
+  </Grid>
+</UserControl>

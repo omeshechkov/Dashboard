@@ -1,0 +1,18 @@
+<Scenario>
+  <Assemblies>
+    <Assembly uri="/Assemblies/StandartObjectLibrary.dll" />
+  </Assemblies>
+  
+  <DataSources>
+    <DataSource name="hunt" refreshTime="00:01:00" />
+    <DataSource name="trunk" refreshTime="00:01:00" />
+    <DataSource name="data" refreshTime="00:01:00" />
+  </DataSources>
+
+  <Resources>
+    <Resource uri="/Dashboards/Resources/EllipseBrushesDictionary.xaml" />
+    <Resource uri="/Dashboards/CC/Resources/AvayaDictionary.xaml" />
+  </Resources>
+  
+  <XamlFile>/Dashboards/CC/Avaya.xaml</XamlFile>
+</Scenario>

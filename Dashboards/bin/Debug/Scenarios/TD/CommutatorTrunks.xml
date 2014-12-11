@@ -1,0 +1,16 @@
+<Scenario>
+  <Assemblies>
+    <Assembly uri="/Assemblies/ExtendedObjectsLibrary.dll" />
+    <Assembly uri="/Assemblies/StandartObjectLibrary.dll" />
+  </Assemblies>
+  
+  <DataSources>
+    <DataSource name="data" refreshTime="00:01:00" />
+  </DataSources>
+
+  <Resources>
+    <Resource uri="/Dashboards/TD/Resources/CommutatorDictionary.xaml" />
+  </Resources>
+  
+  <XamlFile>/Dashboards/TD/CommutatorTrunks.xaml</XamlFile>
+</Scenario>

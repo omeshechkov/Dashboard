@@ -1,0 +1,8 @@
+﻿<eng:DashboardObject x:Name="coloredTextBlock"
+                     x:Class="StandartObjectLibrary.ColoredTextBlock"
+                     xmlns:eng="clr-namespace:DashboardEngine;assembly=DashboardEngine"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  
+  <TextBlock x:Name="ValueTextBlock" FontSize="11" FontFamily="Tahoma" FontWeight="Bold" Padding="0"/>
+</eng:DashboardObject>

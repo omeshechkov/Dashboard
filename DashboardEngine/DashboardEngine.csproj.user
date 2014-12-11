@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>\\10.0.2.2\c%24\www\Dashboard\Dashboard\|\\172.27.129.37\d%24\www\Dashboard\|\\172.27.129.37\www\Dashboard\|x:\www\Dashboard\|x:\www\Test\</PublishUrlHistory>
+    <InstallUrlHistory>http://10.0.2.2:888/Dashboard/DashboardEngine.xbap/|http://172.27.129.37/Dashboard/|http://172.27.129.37/Test/|http://localhost/Dashboard/|http://172.27.129.34/Dashboard/</InstallUrlHistory>
+    <SupportUrlHistory>
+    </SupportUrlHistory>
+    <UpdateUrlHistory>
+    </UpdateUrlHistory>
+    <BootstrapperUrlHistory>
+    </BootstrapperUrlHistory>
+    <ErrorReportUrlHistory>
+    </ErrorReportUrlHistory>
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <DebugSecurityZoneURL>http://10.0.2.2:888/Dashboard/DashboardEngine.xbap</DebugSecurityZoneURL>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartArguments>
+    </StartArguments>
+    <StartURL>file:///D:\Visual Studio Projects\.NET\Other\DashboardEngine\DashboardEngine\bin\Debug\DashboardEngine.xbap?d:\Visual Studio Projects\.NET\Other\DashboardEngine\DashboardEngine\bin\Debug\DashboardEngine.xbap?xamlFile=aaa</StartURL>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+</Project>

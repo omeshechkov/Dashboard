@@ -1,0 +1,31 @@
+﻿<eng:DashboardObject x:Class="StandartObjectLibrary.SimpleLink"
+                     x:Name="linkUserControl"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:std="clr-namespace:StandartObjectLibrary"
+                     xmlns:eng="clr-namespace:DashboardEngine;assembly=DashboardEngine">
+
+  <DockPanel>
+    <TextBlock x:Name="TitleTextBlock" Foreground="White" FontSize="11" FontFamily="Tahoma">
+      <TextBlock.LayoutTransform>
+        <RotateTransform x:Name="TitleRotateTransform" />
+      </TextBlock.LayoutTransform>
+    </TextBlock>
+
+    <StackPanel x:Name="ValueStackPanel" Orientation="Horizontal">
+      <StackPanel.LayoutTransform>
+        <RotateTransform x:Name="ValueRotateTransform" />
+      </StackPanel.LayoutTransform>
+
+      <TextBlock x:Name="ValueTextBlock" Foreground="White" FontSize="11" FontFamily="Tahoma" />
+      <TextBlock x:Name="MeasureUnitTextBlock" Margin="5,0,0,0" Foreground="White" FontSize="11" FontFamily="Tahoma" />
+    </StackPanel>
+
+    <std:Link x:Name="link"
+            Color1="#00000000"
+            SpeedRatio="{Binding ElementName=linkUserControl, Path=SpeedRatio}"
+            Blinking="{Binding ElementName=linkUserControl, Path=Blinking}"
+            BlinkingSpeedRatio="{Binding ElementName=linkUserControl, Path=BlinkingSpeedRatio}" 
+            GraphicValues="{Binding ElementName=linkUserControl, Path=GraphicValues}" />
+  </DockPanel>
+</eng:DashboardObject>

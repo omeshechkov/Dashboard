@@ -1,0 +1,495 @@
+﻿<Page x:Class="DashboardEngine.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:eng="clr-namespace:DashboardEngine"
+      Title="Dashboard">
+
+  <Page.Resources>
+    <SolidColorBrush x:Key="LeftTopCornerButtonBrush" Color="#7284b3" />
+    <SolidColorBrush x:Key="RightBottomCornerButtonBrush" Color="#343d52" />
+    
+    <PathGeometry x:Key="TreeArrow" Figures="M0,0 L0,6 L6,0 z"/>
+    
+    <!--Toggle Button Brush-->
+    <RadialGradientBrush x:Key="ToggleButtonBrush" Center="0.5, 0.5" GradientOrigin="0,0" RadiusX="0.5" RadiusY="0.5">
+      <GradientStop Offset="0" Color="#fff6a8" />
+      <GradientStop Offset="1" Color="#966000" />
+    </RadialGradientBrush>
+
+    <!--Context Menu Style-->
+    <Style x:Key="ContextMenuStyle" TargetType="{x:Type ContextMenu}">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ContextMenu}">
+            <DockPanel Background="#121628">
+              <Rectangle DockPanel.Dock="Top" Height="1" HorizontalAlignment="Stretch" Fill="#394680" />
+              <Rectangle DockPanel.Dock="Left" Width="1" VerticalAlignment="Stretch" Fill="#394680" />
+              <Rectangle DockPanel.Dock="Right" Width="1" VerticalAlignment="Stretch" Fill="#171c33" />
+              <Rectangle DockPanel.Dock="Bottom" Height="1" HorizontalAlignment="Stretch" Fill="#171c33" />
+
+              <StackPanel Orientation="Vertical" IsItemsHost="True" />
+            </DockPanel>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!--Menu Item Style-->
+    <Style TargetType="{x:Type MenuItem}">
+      <Setter Property="Foreground" Value="#7d848e" />
+      
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type MenuItem}">
+            <Border x:Name="border">
+              <ContentPresenter Margin="10,2,10,2" ContentSource="Header" />
+            </Border>
+            
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsHighlighted" Value="true">
+                <Setter TargetName="border" Property="Background">
+                  <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                      <GradientStop Color="#3a4355" Offset="0"/>
+                      <GradientStop Color="#1b2029" Offset="1"/>
+                    </LinearGradientBrush>
+                  </Setter.Value>
+                </Setter>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+      <Style.Triggers>
+        <Trigger Property="IsHighlighted" Value="true">
+          <Setter Property="Foreground" Value="#f6f7fb" />
+        </Trigger>
+      </Style.Triggers>
+    </Style>
+    
+    <!--Separator Menu Item Style-->
+    <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="{x:Type Separator}">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Separator}">
+            <Border BorderBrush="#616572" BorderThickness="1" />
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!--Live Dashboards Context Menu Resource-->
+    <ContextMenu x:Key="liveDashboardContextMenu" Style="{StaticResource ContextMenuStyle}">
+      <MenuItem Header="Open" FontWeight="Bold" Click="OpenMenuItem_Click" />
+      <Separator />
+      <MenuItem Header="Disconnect" Click="DisconnectMenuItem_Click" />
+    </ContextMenu>
+
+    <!--RootMenuAllDashboardsButtonStyle Style-->
+    <Style x:Key="RootMenuAllDashboardsButtonStyle" TargetType="{x:Type Button}">
+      <Setter Property="MinWidth" Value="190" />
+      <Setter Property="Height" Value="20" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Offset="0" Color="#556285" />
+            <GradientStop Offset="1" Color="#343d52" />
+          </LinearGradientBrush>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Button}">
+            <Border Background="{TemplateBinding Background}" Margin="1">
+              <DockPanel>
+                <Rectangle DockPanel.Dock="Left" Width="1" VerticalAlignment="Stretch" Fill="#7284b3" />
+                <Rectangle DockPanel.Dock="Top" Height="1" HorizontalAlignment="Stretch" Fill="#7284b3" />
+                <Rectangle DockPanel.Dock="Right" Width="1" VerticalAlignment="Stretch" Fill="#343d52" />
+                <Rectangle DockPanel.Dock="Bottom" Height="1" HorizontalAlignment="Stretch" Fill="#343d52" />
+
+                <Grid>
+                  <TextBlock x:Name="textBlock1" Text="{TemplateBinding Content}" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Left"
+                         FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontStretch="{TemplateBinding FontStretch}"
+                         FontStyle="{TemplateBinding FontStyle}" FontWeight="{TemplateBinding FontWeight}"
+                         Margin="2,1,2,1">
+                <TextBlock.RenderTransform>
+                  <TranslateTransform X="-1" Y="-1" />
+                </TextBlock.RenderTransform>
+                  </TextBlock>
+
+                  <TextBlock x:Name="textBlock2" Text="{TemplateBinding Content}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left"
+                         FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontStretch="{TemplateBinding FontStretch}"
+                         FontStyle="{TemplateBinding FontStyle}" FontWeight="{TemplateBinding FontWeight}"
+                         Margin="2,1,2,1" />
+                </Grid>
+              </DockPanel>
+            </Border>
+
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="textBlock1" Property="FontWeight" Value="Bold" />
+                <Setter TargetName="textBlock2" Property="FontWeight" Value="Bold" />
+              </Trigger>    
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!--RootMenuButtonStyle Style-->
+    <Style x:Key="RootMenuButtonStyle" TargetType="{x:Type Button}">
+      <Setter Property="MinWidth" Value="190" />
+      <Setter Property="Height" Value="20" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Offset="0" Color="#556285" />
+            <GradientStop Offset="1" Color="#343d52" />
+          </LinearGradientBrush>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Button}">
+            <Border Background="{TemplateBinding Background}" Margin="1">
+              <DockPanel>
+                <Rectangle DockPanel.Dock="Left" Width="1" VerticalAlignment="Stretch" Fill="{DynamicResource LeftTopCornerButtonBrush}" />
+                <Rectangle DockPanel.Dock="Top" Height="1" HorizontalAlignment="Stretch" Fill="{DynamicResource LeftTopCornerButtonBrush}" />
+                <Rectangle DockPanel.Dock="Right" Width="1" VerticalAlignment="Stretch" Fill="{DynamicResource RightBottomCornerButtonBrush}" />
+                <Rectangle DockPanel.Dock="Bottom" Height="1" HorizontalAlignment="Stretch" Fill="{DynamicResource RightBottomCornerButtonBrush}" />
+
+                <Grid>
+                  <TextBlock x:Name="textBlock1" Text="{TemplateBinding Content}" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Left"
+                         FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontStretch="{TemplateBinding FontStretch}"
+                         FontStyle="{TemplateBinding FontStyle}" FontWeight="{TemplateBinding FontWeight}"
+                         Margin="2,1,2,1">
+                <TextBlock.RenderTransform>
+                  <TranslateTransform X="-1" Y="-1" />
+                </TextBlock.RenderTransform>
+                  </TextBlock>
+
+                  <TextBlock x:Name="textBlock2" Text="{TemplateBinding Content}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left"
+                         FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontStretch="{TemplateBinding FontStretch}"
+                         FontStyle="{TemplateBinding FontStyle}" FontWeight="{TemplateBinding FontWeight}"
+                         Margin="2,1,2,1" />
+                </Grid>
+              </DockPanel>
+            </Border>
+
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="textBlock1" Property="FontWeight" Value="Bold" />
+                <Setter TargetName="textBlock2" Property="FontWeight" Value="Bold" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!--ExpanderBackground Resource-->
+    <LinearGradientBrush x:Key="ExpanderBackground" EndPoint="0,1" StartPoint="0,0">
+      <GradientStop Color="#af6000" Offset="0"/>
+      <GradientStop Color="#7f4600" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!--ExpandToggleButton Style-->
+    <Style x:Key="ExpandToggleButton" TargetType="{x:Type ToggleButton}">
+      <Setter Property="Width" Value="11" />
+      <Setter Property="Height" Value="11" />
+      <Setter Property="Cursor" Value="Arrow" />
+
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ToggleButton}">
+            <Grid>
+              <Ellipse Fill="{DynamicResource ToggleButtonBrush}" />
+
+              <Path x:Name="arrowPath" Fill="#191919" Data="M 3,6 L 7,2 L 7,9 Z" />
+            </Grid>
+
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsChecked" Value="true">
+                <Setter TargetName="arrowPath" Property="Data" Value="M 8,6 L 4,2 L 4,9 Z" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!--Grid Splitter Style-->
+    <Style x:Key="GridSplitterStyle" TargetType="{x:Type GridSplitter}">
+      <Setter Property="Width" Value="16"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type GridSplitter}">
+            <Border BorderThickness="2,0,0,0" BorderBrush="#4a546f" Margin="0,0,0,2">
+              <Border BorderThickness="1,0,0,0" BorderBrush="Black">
+                <Grid>
+                  <DockPanel>
+                    <Rectangle DockPanel.Dock="Left" Width="1" Fill="#3e3e54" />
+
+                    <Grid DockPanel.Dock="Right">
+                      <Rectangle Width="3" Fill="Black" HorizontalAlignment="Right" />
+                      <Rectangle Width="2" Fill="#4a546f" HorizontalAlignment="Right" />
+
+                      <Path Data="M 3,0 V 15 L 0,18 V 0 Z" Fill="#2b2b3a" StrokeThickness="1" Stroke="#2b2b3a" />
+                      <Path Data="M 3,14 L 1,19" StrokeThickness="1" Stroke="Black" />
+                    </Grid>
+
+                    <Rectangle Fill="#2b2b3a" />
+                  </DockPanel>
+
+                  <ToggleButton Style="{StaticResource ExpandToggleButton}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,3,0,0" Click="ToggleMainMenu_Click" />
+                </Grid>
+              </Border>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- ExpandCollapseToggleStyle -->
+    <Style x:Key="ExpandCollapseToggleStyle" TargetType="{x:Type ToggleButton}">
+      <Setter Property="Focusable" Value="False"/>
+      <Setter Property="Width" Value="14"/>
+      <Setter Property="Height" Value="14"/>
+      <Setter Property="Background" Value="#b5c7ff"/>
+
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ToggleButton}">
+            <Border Width="14" Height="14" Background="Transparent" Padding="4">
+              <Path Fill="{TemplateBinding Background}" x:Name="ExpandPath" Data="{StaticResource TreeArrow}">
+                <Path.RenderTransform>
+                  <RotateTransform Angle="135" CenterX="3" CenterY="3"/>
+                </Path.RenderTransform>
+              </Path>
+            </Border>
+            <ControlTemplate.Triggers>
+              <MultiTrigger>
+                <MultiTrigger.Conditions>
+                  <Condition Property="IsChecked" Value="True"/>
+                  <Condition Property="IsEnabled" Value="True"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="RenderTransform" TargetName="ExpandPath">
+                  <Setter.Value>
+                    <RotateTransform Angle="225" CenterX="3" CenterY="3"/>
+                  </Setter.Value>
+                </Setter>
+              </MultiTrigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Fill" TargetName="ExpandPath" Value="#484f66"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    
+    <!-- TreeViewItemStyle -->
+    <Style TargetType="{x:Type TreeViewItem}">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderThickness" Value="0,0,0,0.5"/>
+      <Setter Property="BorderBrush" Value="#222731"/>
+      <Setter Property="HorizontalContentAlignment" Value="{Binding Path=HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+      <Setter Property="VerticalContentAlignment" Value="{Binding Path=VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+      <Setter Property="Padding" Value="18,1,2,1" />
+      <Setter Property="Foreground" Value="#cccccc" />
+      <Setter Property="Cursor" Value="Hand" />
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type TreeViewItem}">
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="14" Width="Auto" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+              </Grid.RowDefinitions>
+              
+              <ToggleButton x:Name="Expander" Style="{StaticResource ExpandCollapseToggleStyle}" 
+                            IsChecked="{Binding Path=IsExpanded, RelativeSource={RelativeSource TemplatedParent}}" 
+                            ClickMode="Press" />
+              
+              <Border x:Name="Bd"
+                      SnapsToDevicePixels="true"
+                      Width="{TemplateBinding Width}"
+                      Background="{TemplateBinding Background}"
+                      BorderBrush="{TemplateBinding BorderBrush}"
+                      BorderThickness="{TemplateBinding BorderThickness}"
+                      Padding="{TemplateBinding Padding}"
+                      Grid.Column="1">
+                
+                <ContentPresenter x:Name="PART_Header" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" ContentSource="Header"/>
+              </Border>
+              
+              <Image Source="pack://siteoforigin:,,,/Dashboards/Resources/Images/diagram.png" Grid.Column="1" HorizontalAlignment="Left" />
+              
+              <ItemsPresenter x:Name="ItemsHost" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" />
+            </Grid>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsExpanded" Value="false">
+                <Setter Property="Visibility" TargetName="ItemsHost" Value="Collapsed" />
+              </Trigger>
+              <Trigger Property="HasItems" Value="false">
+                <Setter Property="IsEnabled" TargetName="Expander" Value="False" />
+              </Trigger>
+              <Trigger Property="IsSelected" Value="true">
+                <Setter Property="Background" TargetName="Bd">
+                  <Setter.Value>
+                    <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                      <GradientStop Color="#444e63" Offset="0" />
+                      <GradientStop Color="#1b2028" Offset="1" />
+                    </LinearGradientBrush>
+                  </Setter.Value>
+                </Setter>                
+              </Trigger>
+              <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- TreeViewStyle -->
+    <Style TargetType="{x:Type TreeView}">
+      <Setter Property="Padding" Value="1"/>
+      <Setter Property="Background" Value="#12151a" />
+      <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+      <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type TreeView}">
+            <Border x:Name="Bd" SnapsToDevicePixels="true" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+              <ScrollViewer Padding="{TemplateBinding Padding}" Focusable="false" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" CanContentScroll="false">
+                <ItemsPresenter/>
+              </ScrollViewer>
+            </Border>
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!-- ListBoxItem Style -->
+    <Style TargetType="{x:Type ListBoxItem}">
+      <Setter Property="HorizontalAlignment" Value="Stretch" />
+      <Setter Property="Foreground" Value="#cfcfcf" />
+
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ListBoxItem}">
+            <Border x:Name="border" BorderThickness="0,0,0,1" Background="Transparent">
+              <StackPanel Orientation="Horizontal">
+                <Image Source="pack://siteoforigin:,,,/Dashboards/Resources/Images/diagram.png" Margin="3,0,0,0"/>
+                <TextBlock Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Content}" Margin="3,1,10,1" />
+              </StackPanel>
+            </Border>
+
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" TargetName="border">
+                  <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                      <GradientStop Color="#3a4355" Offset="0"/>
+                      <GradientStop Color="#1b2029" Offset="1"/>
+                    </LinearGradientBrush>
+                  </Setter.Value>
+                </Setter>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <!--ListBox Style-->
+    <Style TargetType="{x:Type ListBox}">
+      <Setter Property="Background" Value="#12151a" />
+      <Setter Property="BorderThickness" Value="0" />
+    </Style>
+  </Page.Resources>
+
+  <Page.Background>
+    <LinearGradientBrush EndPoint="53, 76" StartPoint="100, 1" MappingMode="Absolute" SpreadMethod="Repeat">
+      <GradientStop Color="#000000" Offset="0"/>
+      <GradientStop Color="#111323" Offset="0.3"/>
+      <GradientStop Color="#111323" Offset="0.4"/>
+      <GradientStop Color="#0c0d15" Offset="0.5"/>
+      <GradientStop Color="#07070d" Offset="0.6"/>
+      <GradientStop Color="#07070d" Offset="0.7"/>
+      <GradientStop Color="#000000" Offset="1"/>
+    </LinearGradientBrush>
+  </Page.Background>
+
+  <Grid x:Name="layoutGrid">
+    <Grid.RowDefinitions>
+      <RowDefinition x:Name="upperRow" Height="35" />
+      <RowDefinition Height="*" />
+      <RowDefinition x:Name="lowerRow" Height="35" />
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition x:Name="mainMenuColumn" Width="Auto" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <Path Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="2" Stroke="#4a546f" StrokeThickness="2">
+      <Path.Fill>
+        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+          <GradientStop Offset="0" Color="#12151a" />
+          <GradientStop Offset="0.5" Color="#242a34" />
+          <GradientStop Offset="1" Color="#12151a" />
+        </LinearGradientBrush>
+      </Path.Fill>
+
+      <Path.Data>
+        <PathGeometry>
+          <PathFigure x:Name="mainFrameDecoratorFigure" />
+        </PathGeometry>
+      </Path.Data>
+    </Path>
+
+    <Border BorderBrush="#4a546f" BorderThickness="0,0,0,2" Grid.Row="1" Grid.RowSpan="2">
+      <Border.Background>
+        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+          <GradientStop Offset="0" Color="#12151a" />
+          <GradientStop Offset="0.5" Color="#242a34" />
+          <GradientStop Offset="1" Color="#12151a" />
+        </LinearGradientBrush>
+      </Border.Background>
+
+      <DockPanel x:Name="rootMenuDockPanel" Margin="0,1,16,0">
+        <Button x:Name="liveDashboardsButton" DockPanel.Dock="Top" Content="Live Dashboards" Style="{StaticResource RootMenuButtonStyle}" Click="LiveDashboardsButton_Click" />
+        <Button x:Name="allDashboardsButton" DockPanel.Dock="Bottom" Content="All Dashboards" Style="{StaticResource RootMenuAllDashboardsButtonStyle}" Click="AllDashboardsButton_Click"/>
+        <ContentPresenter x:Name="menuContent" />
+      </DockPanel>
+    </Border>
+
+    <Frame x:Name="mainFrame" Grid.Column="1" Grid.Row="1" SizeChanged="mainFrame_SizeChanged"/>
+
+    <GridSplitter Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Right" VerticalAlignment="Stretch"
+                  Style="{StaticResource GridSplitterStyle}" Focusable="False" />
+
+    <Path Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="2" Stroke="#4a546f" StrokeThickness="2" >
+      <Path.Data>
+        <PathGeometry>
+          <PathFigure x:Name="mainFrameUpperDecorator" />
+        </PathGeometry>
+      </Path.Data>
+    </Path>
+
+    <TextBlock x:Name="titleTextBlock" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Margin="0,10,30,0" FontWeight="Bold" Foreground="White" />
+  </Grid>
+</Page>

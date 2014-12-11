@@ -1,0 +1,7 @@
+<Scenario>
+  <Sources>
+    <Source name="v$providing_processing" />
+  </Sources>
+
+  <TransformFileName>C:\www\Dashboard\DashboardDataProvisioning\Transforms\IT\providing.xsl</TransformFileName>
+</Scenario>

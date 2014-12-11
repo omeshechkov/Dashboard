@@ -1,0 +1,41 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:src="clr-namespace:StandartObjectLibrary"
+             x:Class="StandartObjectLibrary.Ellipse"
+             x:Name="UserControl"
+             FontWeight="Bold">
+
+  <UserControl.Resources>
+    <src:EllipseVisibilityConverter x:Key="converter" />
+  </UserControl.Resources>
+
+  <Grid x:Name="LayoutRoot">
+    <Ellipse x:Name="ellipse" />
+
+    <Ellipse Stroke="Black" StrokeThickness="1.5" />
+    
+    <TextBlock x:Name="textBlock1"
+               Foreground="Black"
+               Visibility="{Binding ElementName=UserControl, Path=ShowValue, Converter={StaticResource converter}}"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               FontFamily="{Binding Path=FontFamily, ElementName=UserControl}"
+               FontWeight="{Binding Path=FontWeight, ElementName=UserControl}"
+               FontSize="{Binding Path=FontSize, ElementName=UserControl}"
+               FontStyle="{Binding Path=FontStyle, ElementName=UserControl}"
+               FontStretch="{Binding Path=FontStretch, ElementName=UserControl}">
+      <TextBlock.RenderTransform>
+        <TranslateTransform X="-1" Y="-1" />
+      </TextBlock.RenderTransform>
+    </TextBlock>
+
+    <TextBlock x:Name="textBlock2"
+               Foreground="White"
+               Visibility="{Binding ElementName=UserControl, Path=ShowValue, Converter={StaticResource converter}}"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               FontFamily="{Binding Path=FontFamily, ElementName=UserControl}"
+               FontWeight="{Binding Path=FontWeight, ElementName=UserControl}"
+               FontSize="{Binding Path=FontSize, ElementName=UserControl}"
+               FontStyle="{Binding Path=FontStyle, ElementName=UserControl}"
+               FontStretch="{Binding Path=FontStretch, ElementName=UserControl}" />
+  </Grid>
+</UserControl>

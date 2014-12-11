@@ -1,0 +1,10 @@
+<Scenario>
+  <Assemblies>
+    <Assembly uri="/Assemblies/StandartObjectLibrary.dll" />
+  </Assemblies>
+  
+  <DataSources />
+  <Resources />
+  
+  <XamlFile>/Dashboards/QA/MainPage.xaml</XamlFile>
+</Scenario>

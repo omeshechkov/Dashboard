@@ -1,0 +1,96 @@
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\ExtendedObjectsLibrary.dll
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\ExtendedObjectsLibrary.pdb
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\DashboardEngine.exe
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\StandartObjectLibrary.dll
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\DashboardEngine.pdb
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\StandartObjectLibrary.pdb
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\CirclularHistogramControl.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicControl.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicLegendElement.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\HistogramLegendElement.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\TendencyControl.baml
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\CirclularHistogramControl.g.cs
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicControl.g.cs
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicLegendElement.g.cs
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\HistogramLegendElement.g.cs
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\TendencyControl.g.cs
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary_MarkupCompile.cache
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.g.resources
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.Properties.Resources.resources
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.csproj.GenerateResource.Cache
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.dll
+D:\Visual Studio Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.pdb
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\ExtendedObjectsLibrary.dll
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\ExtendedObjectsLibrary.pdb
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\DashboardEngine.exe
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\StandartObjectLibrary.dll
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\DashboardEngine.pdb
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\StandartObjectLibrary.pdb
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\CirclularHistogramControl.baml
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicControl.baml
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicLegendElement.baml
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\HistogramLegendElement.baml
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\TendencyControl.baml
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\CirclularHistogramControl.g.cs
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicControl.g.cs
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicLegendElement.g.cs
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\HistogramLegendElement.g.cs
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\TendencyControl.g.cs
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary_MarkupCompile.cache
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.g.resources
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.Properties.Resources.resources
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GenerateResource-ResGen.write.1.tlog
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.dll
+D:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.pdb
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\ExtendedObjectsLibrary.dll
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\ExtendedObjectsLibrary.pdb
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\DashboardEngine.exe
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\StandartObjectLibrary.dll
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\DashboardEngine.pdb
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\bin\Debug\StandartObjectLibrary.pdb
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ResolveAssemblyReference.cache
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\CirclularHistogramControl.baml
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicControl.baml
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicLegendElement.baml
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\HistogramLegendElement.baml
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\TendencyControl.baml
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\CirclularHistogramControl.g.cs
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicControl.g.cs
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicLegendElement.g.cs
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\HistogramLegendElement.g.cs
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\TendencyControl.g.cs
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary_MarkupCompile.cache
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.g.resources
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.Properties.Resources.resources
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GenerateResource-ResGen.read.1.tlog
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ResGen.read.1.tlog
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\GenerateResource-ResGen.write.1.tlog
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ResGen.write.1.tlog
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.dll
+H:\Projects\.NET\NurTelecom\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.pdb
+D:\projects\Dashboard\ExtendedObjectsLibrary\bin\Debug\ExtendedObjectsLibrary.dll
+D:\projects\Dashboard\ExtendedObjectsLibrary\bin\Debug\ExtendedObjectsLibrary.pdb
+D:\projects\Dashboard\ExtendedObjectsLibrary\bin\Debug\DashboardEngine.exe
+D:\projects\Dashboard\ExtendedObjectsLibrary\bin\Debug\StandartObjectLibrary.dll
+D:\projects\Dashboard\ExtendedObjectsLibrary\bin\Debug\DashboardEngine.pdb
+D:\projects\Dashboard\ExtendedObjectsLibrary\bin\Debug\StandartObjectLibrary.pdb
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.csprojResolveAssemblyReference.cache
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\CirclularHistogramControl.baml
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicControl.baml
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicLegendElement.baml
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\HistogramLegendElement.baml
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\TendencyControl.baml
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\CirclularHistogramControl.g.cs
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicControl.g.cs
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\GraphicLegendElement.g.cs
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\HistogramLegendElement.g.cs
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\TendencyControl.g.cs
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary_MarkupCompile.cache
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.g.resources
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.Properties.Resources.resources
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.csproj.GenerateResource.Cache
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.dll
+D:\projects\Dashboard\ExtendedObjectsLibrary\obj\Debug\ExtendedObjectsLibrary.pdb

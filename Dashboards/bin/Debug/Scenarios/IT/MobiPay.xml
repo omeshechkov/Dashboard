@@ -1,0 +1,15 @@
+<Scenario>
+  <Assemblies>
+    <Assembly uri="/Assemblies/StandartObjectLibrary.dll" />
+  </Assemblies>
+  
+  <DataSources>
+    <DataSource name="data" refreshTime="00:01:00" />
+  </DataSources>
+
+  <Resources>
+    <Resource uri="/Dashboards/Resources/EllipseBrushesDictionary.xaml" />
+  </Resources>
+  
+  <XamlFile>/Dashboards/IT/MobiPay.xaml</XamlFile>
+</Scenario>

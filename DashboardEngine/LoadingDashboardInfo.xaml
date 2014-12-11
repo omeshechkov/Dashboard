@@ -1,0 +1,9 @@
+﻿<Page x:Class="DashboardEngine.LoadingDashboardInfo"
+      x:Name="currentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  
+  <Grid>
+    <ListBox x:Name="loadedAssemblies" ItemsSource="{Binding ElementName=currentPage, Path=LoadedAssemblies}"/>
+  </Grid>
+</Page>

@@ -1,0 +1,100 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:std="clr-namespace:StandartObjectLibrary;assembly=StandartObjectLibrary"
+      xmlns:ext="clr-namespace:ExtendedObjectsLibrary;assembly=ExtendedObjectsLibrary"
+	    x:Name="Window"
+	    Title="Charging Messages">
+
+  <Page.Resources>
+    <XmlDataProvider x:Key="rating" Source="http://172.27.129.37/SCOMSchema/Service.svc/GetSchema?name=rating%20Database%20Queue%20Statistic" XPath="/DatabaseQueueStatistic/RawData/Queues" />
+    
+    <Style TargetType="{x:Type TextBlock}">
+      <Setter Property="FontSize" Value="9" />
+    </Style>
+  </Page.Resources>
+
+    <Grid DataContext="{Binding Source={StaticResource rating}}" >
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        <RowDefinition />
+        </Grid.RowDefinitions>
+
+      <Grid Grid.Row="0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <std:Group Grid.Column="0" Title="Post Queue" >
+          <ext:GraphicControl DataSource="{Binding XPath=Queue[@name\=\'post_queue\']/GraphicData/Graphic[@name\=\'Ready\']}" 
+                              Margin="10"
+                              MaxValue="1" />
+        </std:Group>
+
+        <std:Group Grid.Column="1" Title="Charge Signalling Queue" >
+          <ext:GraphicControl DataSource="{Binding XPath=Queue[@name\=\'charge_signalling_queue\']/GraphicData/Graphic[@name\=\'Ready\']}" 
+                              Margin="10"
+                              MaxValue="1" />
+        </std:Group>
+      </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <std:Group Grid.Column="0" Title="Post Queue" >
+                <ext:GraphicControl DataSource="{Binding XPath=Queue[@name\=\'post_queue\']/GraphicData/Graphic[@name\=\'Processed\']}" 
+                              Margin="10"
+                              MaxValue="1" />
+            </std:Group>
+
+            <std:Group Grid.Column="1" Title="Charge Signalling Queue" >
+                <ext:GraphicControl DataSource="{Binding XPath=Queue[@name\=\'charge_signalling_queue\']/GraphicData/Graphic[@name\=\'Processed\']}" 
+                              Margin="10"
+                              MaxValue="1" />
+            </std:Group>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <std:Group Grid.Column="0" Title="Post Queue" >
+                <ext:GraphicControl DataSource="{Binding XPath=Queue[@name\=\'post_queue\']/GraphicData/Graphic[@name\=\'Average Time\']}" 
+                              Margin="10"
+                              MaxValue="1" />
+            </std:Group>
+
+            <std:Group Grid.Column="1" Title="Charge Signalling Queue" >
+                <ext:GraphicControl DataSource="{Binding XPath=Queue[@name\=\'charge_signalling_queue\']/GraphicData/Graphic[@name\=\'Average Time\']}" 
+                              Margin="10"
+                              MaxValue="1" />
+            </std:Group>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <std:Group Grid.Column="0" Title="Post Queue" >
+                <ext:GraphicControl DataSource="{Binding XPath=Queue[@name\=\'post_queue\']/GraphicData/Graphic[@name\=\'Total Time\']}" 
+                              Margin="10"
+                              MaxValue="1" />
+            </std:Group>
+
+            <std:Group Grid.Column="1" Title="Charge Signalling Queue" >
+                <ext:GraphicControl DataSource="{Binding XPath=Queue[@name\=\'charge_signalling_queue\']/GraphicData/Graphic[@name\=\'Total Time\']}" 
+                              Margin="10"
+                              MaxValue="1" />
+            </std:Group>
+        </Grid>
+    </Grid>
+</Page>

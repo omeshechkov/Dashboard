@@ -1,0 +1,33 @@
+﻿<UserControl x:Name="UserControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="ExtendedObjectsLibrary.TendencyControl">
+
+  <UserControl.Resources>
+    <GeometryDrawing x:Key="downArrow" Geometry="M 0.5,14.3142L 30.5,14.3142L 15.5,30.5L 0.5,14.3142 Z">
+      <GeometryDrawing.Pen>
+        <Pen LineJoin="Round" Brush="#4a546f" Thickness="0" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+
+    <GeometryDrawing x:Key="upArrow" Geometry="M 30.5,16.6857L 0.499999,16.6857L 15.5,0.499949L 30.5,16.6857 Z">
+      <GeometryDrawing.Pen>
+        <Pen LineJoin="Round" Brush="#4a546f" Thickness="0" />
+      </GeometryDrawing.Pen>
+    </GeometryDrawing>
+  </UserControl.Resources>
+  
+  <Grid Margin="0">
+    <Rectangle>
+      <Rectangle.Fill>
+        <DrawingBrush>
+          <DrawingBrush.Drawing>
+            <DrawingGroup x:Name="drawingGroup" />
+          </DrawingBrush.Drawing>
+        </DrawingBrush>
+      </Rectangle.Fill>
+    </Rectangle>
+  </Grid>
+</UserControl>

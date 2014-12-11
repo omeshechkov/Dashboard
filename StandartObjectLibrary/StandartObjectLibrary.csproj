@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)'==''">Debug</Configuration>
+    <DefaultClrNameSpace>StandartObjectLibrary</DefaultClrNameSpace>
+    <AssemblyName>StandartObjectLibrary</AssemblyName>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <AlwaysCompileMarkupFilesInSeparateDomain>false</AlwaysCompileMarkupFilesInSeparateDomain>
+    <ExpressionBlendCreationVersion>2.0.1146.0</ExpressionBlendCreationVersion>
+    <ProjectGuid>{AB7A5076-7602-42D6-9783-7A5E8F82E190}</ProjectGuid>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OutputType>Library</OutputType>
+    <RootNamespace>StandartObjectLibrary</RootNamespace>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartupObject>
+    </StartupObject>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="ColoredTextBlock.xaml.cs">
+      <DependentUpon>ColoredTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColorFill.cs" />
+    <Compile Include="Direction.cs" />
+    <Compile Include="LinearGradientColorFill.cs" />
+    <Compile Include="Intervals\ColorInterval.cs" />
+    <Compile Include="Intervals\ColorIntervalCollection.cs" />
+    <Compile Include="Controls\Cooler.xaml.cs">
+      <DependentUpon>Cooler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Cylinder.xaml.cs">
+      <DependentUpon>Cylinder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\EllipseVisibilityConverter.cs" />
+    <Compile Include="Fill.cs" />
+    <Compile Include="BrushFill.cs" />
+    <Compile Include="Controls\Group.xaml.cs">
+      <DependentUpon>Group.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Link.xaml.cs">
+      <DependentUpon>Link.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProgressBar.xaml.cs">
+      <DependentUpon>ProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Intervals\BrushInterval.cs" />
+    <Compile Include="Intervals\BrushIntervalCollection.cs" />
+    <Compile Include="Intervals\TwoColorInterval.cs" />
+    <Compile Include="Intervals\IntervalCollectionBase.cs" />
+    <Compile Include="Intervals\Interval.cs" />
+    <Compile Include="Intervals\TwoColorIntervalCollection.cs" />
+    <Compile Include="Controls\Ellipse.xaml.cs">
+      <DependentUpon>Ellipse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleCooler.xaml.cs">
+      <DependentUpon>SimpleCooler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleCylinder.xaml.cs">
+      <DependentUpon>SimpleCylinder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleEllipse.xaml.cs">
+      <DependentUpon>SimpleEllipse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleLink.xaml.cs">
+      <DependentUpon>SimpleLink.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleProgressBar.xaml.cs">
+      <DependentUpon>SimpleProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SolidColorFill.cs" />
+    <Compile Include="Converters\StringToValueConverter.cs" />
+    <Compile Include="TwoColorFill.cs" />
+    <Page Include="ColoredTextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Cooler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Cylinder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Ellipse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Group.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Link.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SimpleProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SimpleEllipse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SimpleCylinder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SimpleLink.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SimpleCooler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DashboardEngine\DashboardEngine.csproj">
+      <Project>{26788F19-71D6-46D4-8E83-C770F424A9F9}</Project>
+      <Name>DashboardEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+</Project>
